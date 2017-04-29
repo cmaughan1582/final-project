@@ -1,5 +1,19 @@
-<form action="/to_do/add/" method="post">
+{% load static %}
+<head>
+    <title>
+        Add Item
+    </title>
+    <link rel = "stylesheet" type="text/css" href="{% static 'to_do/style.css' %}" />
+</head>
+<body>
+    <div class="container">
+<h1>Add an Item</h1>
+<div class="addblock">
+<form action="/to_do/add/" method="post" class="addform">
     {% csrf_token %}
     {{ form }}
     <input type="submit" value="Submit" />
 </form>
+</div>
+</div>
+</body>

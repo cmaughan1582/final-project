@@ -1,6 +1,20 @@
-Are you sure you have completed this task? "{{ item.item_content }}"
+{% load static %}
+<head>
+  <title>
+    Delete Item
+  </title>
+  <link rel = "stylesheet" type="text/css" href="{% static 'to_do/style.css' %}" />
+</head>
+<body>
+<div class ="container">
+<h1>Delete Item</h1>
+<p class = "deletequest">Are you sure you have completed this task?<br> <span>"{{ item.item_content }}"</span></p>
 <p> </p>
-<form method="post">
+<div class="addblock">
+<form method="post" class="addform">
   {% csrf_token %}
   <button type="submit" class="btn btn-danger">Yes</button>
 </form>
+</div>
+</div>
+</body>
