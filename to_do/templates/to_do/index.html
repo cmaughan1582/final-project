@@ -1,0 +1,12 @@
+{% if latest_list %}
+    <h1>Your To-Do List</h1>
+    <ul>
+    {% for item in latest_list %}
+        <li>{{ item.item_content }} -<a href="{% url 'delete' pk=item.pk %}">Done</a></li>
+    {% endfor %}
+    </ul>
+    <a href="/to_do/add/">Add Item</a>
+{% else %}
+    <p>No items on your to-do list</p>
+    <a href="/to_do/add">Add Item</a>
+{% endif %}
